@@ -1,6 +1,12 @@
-This project is a fork of djbergers win32-sspi project which
+This project is a fork of the garysick win32-sspi project which is in turn 
+a fork of djbergers win32-sspi project which
 provided the beginnings of a an FFI implementation of SSPI
-on Windows. This project adds support for Kerberos through the
+on Windows. This particular fork expands the buffer size to ensure that the Kerberos token will 
+work in the case of a user with a very large number of AD groups.
+
+The following is the verbatim documentation from the garysick version of the project:
+
+This project adds support for Kerberos through the
 SPNEGO/Negotiate protocol.
 
 The examples directory has working examples to illustrate
