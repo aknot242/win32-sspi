@@ -9,7 +9,8 @@ class TC_Win32_SSPI_Negotiate_Client < Test::Unit::TestCase
   MockCredentialHandle = [777,888]
   MockTimeStamp = [0x000000FF,0xFF000000]
   MockContextHandle = [123,987]
-  MockSecBufferContent = Random.new.bytes(128)
+  # Create a mock buffer to meet the Windows 7/Server 2008 defaults
+  MockSecBufferContent = Random.new.bytes(12000) 
   ContextAttr = Windows::Constants::ISC_REQ_CONFIDENTIALITY | 
                 Windows::Constants::ISC_REQ_REPLAY_DETECT | 
                 Windows::Constants::ISC_REQ_CONNECTION
