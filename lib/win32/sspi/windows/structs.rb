@@ -78,7 +78,7 @@ module Windows
           self[:cbBuffer] = token.size
           self[:pvBuffer] = FFI::MemoryPointer.from_string(token)
         else
-          self[:cbBuffer] = Windows::Constants::TOKENBUFSIZE # Our TOKENBUFSIZE = 4096
+          self[:cbBuffer] = Windows::Constants::TOKENBUFSIZE # Our TOKENBUFSIZE = 12000 as Windows 7/Server 2008 era default
           self[:pvBuffer] = FFI::MemoryPointer.new(:char, Windows::Constants::TOKENBUFSIZE)
         end
 
